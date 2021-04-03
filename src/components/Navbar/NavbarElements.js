@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {NavLink as Link} from 'react-router-dom'
-import {FaUser} from 'react-icons/fa'
+import {FaUser, FaBars} from 'react-icons/fa'
 
 
 export const Nav = styled.nav`
@@ -9,41 +9,43 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-  z-index: 10;
-  box-shadow: 0 1px 10px var(--color-primary);
+  z-index: 3;
+  box-shadow: 0 1px 15px var(--color-primary);
 `
 
-export const NavLogo = styled(Link)`
-  color: #fff;
+export const NavContent = styled.div`
   display: flex;
   align-items: center;
   text-decoration: none;
   height: 100%;
-  cursor: pointer;
-
+  
   & {
     justify-content: center;
     flex-grow: 1;
   }
 
+`
+
+export const NavLogo = styled(Link)`
+  
+  cursor: pointer;
+
+  
   img {
     width: 150px;
   }
 `
 
-export const NavBtn = styled.div`
+export const NavAccountLink =  styled(Link)`
+  text-decoration: none;
   display: flex;
   position: absolute;
   right: 1rem;
-  top: 1.5em;
+  top: 1.2em;
   align-items: center;
 `
 
-export const NavBtnLink =  styled(Link)`
-  text-decoration: none;
-`
-
 export const NavAccountIcon = styled(FaUser)`
-  font-size: 20px;
+  font-size: 30px;
   color: white;
 `
