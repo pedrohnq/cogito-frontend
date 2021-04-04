@@ -9,6 +9,7 @@ export const Side = styled.div`
   box-shadow: inset 0 20px 15px -20px var(--color-primary);
   @media only screen and (max-width: 800px) {
     display: none;
+    z-index: 20;
     &.active {
       display: flex;
       width: 100%;
