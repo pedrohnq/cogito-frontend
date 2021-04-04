@@ -7,7 +7,7 @@ export const ChartArea = styled.div`
   z-index: 30;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 66px);
+  height: calc(70vh - 66px);
 
   @media only screen and (max-width: 800px) {
     width: 100vw;

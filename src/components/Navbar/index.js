@@ -1,5 +1,5 @@
 import React from 'react'
-import {Nav, ToggleSidebar, Bars, NavContent, NavLogo, NavAccountLink, NavAccountIcon} from './NavbarElements'
+import {Nav, NavContent, NavLogo, NavAccountLink, NavAccountIcon} from './NavbarElements'
 import Logo from '../../assets/images/logo.png'
 
 
