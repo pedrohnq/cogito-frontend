@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react'
 import Chart from 'react-apexcharts'
 import {ChartArea} from './style'
+import axios from 'axios'
+
 
 var data = {
-    series: [1, 2, 3],
+    series: [0, 0, 0],
     
     options: {
       dataLabels: {
@@ -31,9 +33,21 @@ var data = {
 
 
 const DonutChart = () => {
+  const [seriesValues, setSeriesValues] = useState([]);
+  const [loading, setLoading] = useState([true]);
+  useEffect(() => {
+    axios.get('https://compass-cogito.herokuapp.com/')
+      .then((response) => {
+        setSeriesValues(response.data);
+        data.series = [response.data['Comprador'], response.data['Vendedor'], response.data['Neutro']]
+        setLoading(false)
+      });
+  });
+
   return(
       <ChartArea>
-        <Chart options={data.options} series={data.series} width='500'  type='donut'/>
+        {loading ? <h1>Carregando</h1> : 
+        <Chart options={data.options} series={data.series} width='500'  type='donut'/>}
       </ChartArea>
       
     );
